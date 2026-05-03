@@ -75,8 +75,10 @@ export const App = () => {
           type="button"
           className={`button is-warning ${cn({ 'is-light': reverseField !== SORT_FIELD_REVERSE })}`}
           onClick={() =>
-            setReverseField(prev =>
-              prev === SORT_FIELD_REVERSE ? '' : SORT_FIELD_REVERSE,
+            setReverseField(
+              SORT_FIELD_REVERSE && reverseField !== SORT_FIELD_REVERSE
+                ? SORT_FIELD_REVERSE
+                : '',
             )
           }
         >
